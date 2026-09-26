@@ -1,0 +1,16 @@
+#!/bin/bash
+curl -s https://01.tomorrow-school.ai/assets/superhero/all.json | jq -r '.[] | select(.id == 170) | .name, .powerstats.power, .appearance.gender'
+------------------------------------------------------------------
+ls -utp | grep -v '^\.' | tr '\n' ',' | sed 's/,$//'; echo
+
+echo $(find . | wc -l)
+
+find . -not -path '*/.*' \( -name "a*" -o -name "*z" -o -name "z*a!" \)
+
+find . -type f -name "*.sh" ! -name "lookagain.sh" | sed 's/.*\///; s/\.sh$//' | sort -r
+
+ls -l | awk "NR % 2 == 0"
+
+---------------------------------------------------------------------------------------------
+
+curl -s https://01.tomorrow-school.ai/assets/superhero/all.json | jq ".[] | select(.id == ($HERO_ID)) | .connections.relatives" | sed 's/^"//; s/"$//'
