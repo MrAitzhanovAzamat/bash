@@ -1,0 +1,6 @@
+#!/bin/bash
+find . -type f -name "*.sh" ! -name "lookagain.sh" -exec stat -f '%m %N' {} \; \
+  | sort -rn \
+  | awk '{print $2}' \
+  | sed 's#.*/##; s/\.sh$//' \
+  | awk '{a[NR]=$0} END{print "Number of files " NR; for(i=2;i<=NR;i+=2) print i, a[i]}'
