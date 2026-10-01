@@ -1,2 +1,0 @@
-#!/bin/bash
-curl -s https://api.github.com/user/307041516 | jq '.login'

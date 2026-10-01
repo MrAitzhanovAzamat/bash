@@ -1,0 +1,3 @@
+#!/bin/bash
+LOGIN=$(curl -s "https://api.github.com/user/307041516" | jq '.login' | sed -E 's/^"//; s/"$//; s/Mr/Sir/; s/([a-z])([A-Z])/\1 \2/g')
+echo "$LOGIN"
